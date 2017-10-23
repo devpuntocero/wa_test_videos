@@ -1,0 +1,950 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="db_videos_testModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="fact_estado">
+          <Key>
+            <PropertyRef Name="id_estado" />
+          </Key>
+          <Property Name="id_estado" Type="int" Nullable="false" />
+          <Property Name="desc_estado" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="fact_estatus">
+          <Key>
+            <PropertyRef Name="id_estatus" />
+          </Key>
+          <Property Name="id_estatus" Type="int" Nullable="false" />
+          <Property Name="desc_estatus" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="fact_estatus_material">
+          <Key>
+            <PropertyRef Name="id_estatus_material" />
+          </Key>
+          <Property Name="id_estatus_material" Type="int" Nullable="false" />
+          <Property Name="desc_estatus_material" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="fact_estatus_qa">
+          <Key>
+            <PropertyRef Name="id_estatus_qa" />
+          </Key>
+          <Property Name="id_estatus_qa" Type="int" Nullable="false" />
+          <Property Name="desc_estatus_qa" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="fact_generos">
+          <Key>
+            <PropertyRef Name="id_genero" />
+          </Key>
+          <Property Name="id_genero" Type="int" Nullable="false" />
+          <Property Name="desc_genero" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="fact_municipio">
+          <Key>
+            <PropertyRef Name="id_municipio" />
+          </Key>
+          <Property Name="id_municipio" Type="int" Nullable="false" />
+          <Property Name="desc_municipio" Type="varchar" MaxLength="50" />
+          <Property Name="id_estado" Type="int" />
+        </EntityType>
+        <EntityType Name="fact_tipo_usuarios">
+          <Key>
+            <PropertyRef Name="id_tipo_usuario" />
+          </Key>
+          <Property Name="id_tipo_usuario" Type="int" Nullable="false" />
+          <Property Name="desc_tipo_usuario" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="inf_centro">
+          <Key>
+            <PropertyRef Name="id_centro" />
+          </Key>
+          <Property Name="id_centro" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="id_estatus" Type="int" />
+          <Property Name="fecha_registro" Type="date" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+          <Property Name="id_municipio" Type="int" />
+          <Property Name="colonia" Type="varchar" MaxLength="50" />
+          <Property Name="calle_num" Type="varchar" MaxLength="50" />
+          <Property Name="cp" Type="varchar" MaxLength="5" />
+          <Property Name="telefono" Type="varchar" MaxLength="50" />
+          <Property Name="telefono_alt" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="email_alt" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="inf_contacto">
+          <Key>
+            <PropertyRef Name="id_contacto" />
+          </Key>
+          <Property Name="id_contacto" Type="int" Nullable="false" />
+          <Property Name="id_municipio" Type="int" />
+          <Property Name="colonia" Type="varchar" MaxLength="50" />
+          <Property Name="calle_num" Type="varchar" MaxLength="50" />
+          <Property Name="cp" Type="varchar" MaxLength="5" />
+          <Property Name="telefono" Type="varchar" MaxLength="50" />
+          <Property Name="telefono_alt" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="email_alt" Type="varchar" MaxLength="50" />
+          <Property Name="id_usuario" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="inf_fecha_transformacion">
+          <Key>
+            <PropertyRef Name="id_fecha_transformacion" />
+          </Key>
+          <Property Name="id_fecha_transformacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="horario" Type="datetime" />
+          <Property Name="id_usuario" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="id_centro" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="fecha_registro" Type="date" />
+        </EntityType>
+        <EntityType Name="inf_material">
+          <Key>
+            <PropertyRef Name="id_material" />
+          </Key>
+          <Property Name="id_material" Type="int" Nullable="false" />
+          <Property Name="expediente" Type="varchar" MaxLength="50" />
+          <Property Name="sesion" Type="varchar" MaxLength="50" />
+          <Property Name="archivo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="bits" Type="int" />
+          <Property Name="fecha_registro" Type="date" />
+          <Property Name="id_estatus_material" Type="int" />
+          <Property Name="id_estatus_qa" Type="int" />
+          <Property Name="id_usuario" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="inf_subcentros">
+          <Key>
+            <PropertyRef Name="id_subcentro" />
+          </Key>
+          <Property Name="id_subcentro" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="id_estatus" Type="int" />
+          <Property Name="fecha_registro" Type="date" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+          <Property Name="id_municipio" Type="int" />
+          <Property Name="colonia" Type="varchar" MaxLength="50" />
+          <Property Name="calle_num" Type="varchar" MaxLength="50" />
+          <Property Name="cp" Type="varchar" MaxLength="5" />
+          <Property Name="telefono" Type="varchar" MaxLength="50" />
+          <Property Name="telefono_alt" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="email_alt" Type="varchar" MaxLength="50" />
+          <Property Name="id_centro" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="inf_usuarios">
+          <Key>
+            <PropertyRef Name="id_usuario" />
+          </Key>
+          <Property Name="id_usuario" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="codigo_usuario" Type="varchar" MaxLength="50" />
+          <Property Name="nombres" Type="varchar" MaxLength="50" />
+          <Property Name="a_paterno" Type="varchar" MaxLength="50" />
+          <Property Name="a_materno" Type="varchar" MaxLength="50" />
+          <Property Name="clave" Type="varchar" MaxLength="50" />
+          <Property Name="id_genero" Type="int" />
+          <Property Name="id_estatus" Type="int" />
+          <Property Name="id_tipo_usuario" Type="int" />
+          <Property Name="fecha_nacimiento" Type="date" />
+          <Property Name="fecha_registro" Type="date" />
+          <Property Name="id_centro" Type="uniqueidentifier" />
+        </EntityType>
+        <Association Name="FK_fact_municipio_fact_estado">
+          <End Role="fact_estado" Type="Self.fact_estado" Multiplicity="0..1" />
+          <End Role="fact_municipio" Type="Self.fact_municipio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_estado">
+              <PropertyRef Name="id_estado" />
+            </Principal>
+            <Dependent Role="fact_municipio">
+              <PropertyRef Name="id_estado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_centro_fact_municipio">
+          <End Role="fact_municipio" Type="Self.fact_municipio" Multiplicity="0..1" />
+          <End Role="inf_centro" Type="Self.inf_centro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_municipio">
+              <PropertyRef Name="id_municipio" />
+            </Principal>
+            <Dependent Role="inf_centro">
+              <PropertyRef Name="id_municipio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_contacto_fact_municipio">
+          <End Role="fact_municipio" Type="Self.fact_municipio" Multiplicity="0..1" />
+          <End Role="inf_contacto" Type="Self.inf_contacto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_municipio">
+              <PropertyRef Name="id_municipio" />
+            </Principal>
+            <Dependent Role="inf_contacto">
+              <PropertyRef Name="id_municipio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_contacto_inf_usuarios">
+          <End Role="inf_usuarios" Type="Self.inf_usuarios" Multiplicity="1" />
+          <End Role="inf_contacto" Type="Self.inf_contacto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_usuarios">
+              <PropertyRef Name="id_usuario" />
+            </Principal>
+            <Dependent Role="inf_contacto">
+              <PropertyRef Name="id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_fecha_transformacion_inf_centro">
+          <End Role="inf_centro" Type="Self.inf_centro" Multiplicity="1" />
+          <End Role="inf_fecha_transformacion" Type="Self.inf_fecha_transformacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_centro">
+              <PropertyRef Name="id_centro" />
+            </Principal>
+            <Dependent Role="inf_fecha_transformacion">
+              <PropertyRef Name="id_centro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_fecha_transformacion_inf_usuarios">
+          <End Role="inf_usuarios" Type="Self.inf_usuarios" Multiplicity="1" />
+          <End Role="inf_fecha_transformacion" Type="Self.inf_fecha_transformacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_usuarios">
+              <PropertyRef Name="id_usuario" />
+            </Principal>
+            <Dependent Role="inf_fecha_transformacion">
+              <PropertyRef Name="id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_material_fact_estatus_material">
+          <End Role="fact_estatus_material" Type="Self.fact_estatus_material" Multiplicity="0..1" />
+          <End Role="inf_material" Type="Self.inf_material" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_estatus_material">
+              <PropertyRef Name="id_estatus_material" />
+            </Principal>
+            <Dependent Role="inf_material">
+              <PropertyRef Name="id_estatus_material" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_material_fact_estatus_qa">
+          <End Role="fact_estatus_qa" Type="Self.fact_estatus_qa" Multiplicity="0..1" />
+          <End Role="inf_material" Type="Self.inf_material" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_estatus_qa">
+              <PropertyRef Name="id_estatus_qa" />
+            </Principal>
+            <Dependent Role="inf_material">
+              <PropertyRef Name="id_estatus_qa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_material_inf_usuarios">
+          <End Role="inf_usuarios" Type="Self.inf_usuarios" Multiplicity="1" />
+          <End Role="inf_material" Type="Self.inf_material" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_usuarios">
+              <PropertyRef Name="id_usuario" />
+            </Principal>
+            <Dependent Role="inf_material">
+              <PropertyRef Name="id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_subcentros_inf_centro">
+          <End Role="inf_centro" Type="Self.inf_centro" Multiplicity="1" />
+          <End Role="inf_subcentros" Type="Self.inf_subcentros" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_centro">
+              <PropertyRef Name="id_centro" />
+            </Principal>
+            <Dependent Role="inf_subcentros">
+              <PropertyRef Name="id_centro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_usuarios_fact_estatus">
+          <End Role="fact_estatus" Type="Self.fact_estatus" Multiplicity="0..1" />
+          <End Role="inf_usuarios" Type="Self.inf_usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_estatus">
+              <PropertyRef Name="id_estatus" />
+            </Principal>
+            <Dependent Role="inf_usuarios">
+              <PropertyRef Name="id_estatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_usuarios_fact_generos">
+          <End Role="fact_generos" Type="Self.fact_generos" Multiplicity="0..1" />
+          <End Role="inf_usuarios" Type="Self.inf_usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_generos">
+              <PropertyRef Name="id_genero" />
+            </Principal>
+            <Dependent Role="inf_usuarios">
+              <PropertyRef Name="id_genero" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_usuarios_fact_tipo_usuarios">
+          <End Role="fact_tipo_usuarios" Type="Self.fact_tipo_usuarios" Multiplicity="0..1" />
+          <End Role="inf_usuarios" Type="Self.inf_usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_tipo_usuarios">
+              <PropertyRef Name="id_tipo_usuario" />
+            </Principal>
+            <Dependent Role="inf_usuarios">
+              <PropertyRef Name="id_tipo_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="db_videos_testModelStoreContainer">
+          <EntitySet Name="fact_estado" EntityType="Self.fact_estado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fact_estatus" EntityType="Self.fact_estatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fact_estatus_material" EntityType="Self.fact_estatus_material" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fact_estatus_qa" EntityType="Self.fact_estatus_qa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fact_generos" EntityType="Self.fact_generos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fact_municipio" EntityType="Self.fact_municipio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fact_tipo_usuarios" EntityType="Self.fact_tipo_usuarios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inf_centro" EntityType="Self.inf_centro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inf_contacto" EntityType="Self.inf_contacto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inf_fecha_transformacion" EntityType="Self.inf_fecha_transformacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inf_material" EntityType="Self.inf_material" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inf_subcentros" EntityType="Self.inf_subcentros" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inf_usuarios" EntityType="Self.inf_usuarios" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_fact_municipio_fact_estado" Association="Self.FK_fact_municipio_fact_estado">
+            <End Role="fact_estado" EntitySet="fact_estado" />
+            <End Role="fact_municipio" EntitySet="fact_municipio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_centro_fact_municipio" Association="Self.FK_inf_centro_fact_municipio">
+            <End Role="fact_municipio" EntitySet="fact_municipio" />
+            <End Role="inf_centro" EntitySet="inf_centro" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_contacto_fact_municipio" Association="Self.FK_inf_contacto_fact_municipio">
+            <End Role="fact_municipio" EntitySet="fact_municipio" />
+            <End Role="inf_contacto" EntitySet="inf_contacto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_contacto_inf_usuarios" Association="Self.FK_inf_contacto_inf_usuarios">
+            <End Role="inf_usuarios" EntitySet="inf_usuarios" />
+            <End Role="inf_contacto" EntitySet="inf_contacto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_fecha_transformacion_inf_centro" Association="Self.FK_inf_fecha_transformacion_inf_centro">
+            <End Role="inf_centro" EntitySet="inf_centro" />
+            <End Role="inf_fecha_transformacion" EntitySet="inf_fecha_transformacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_fecha_transformacion_inf_usuarios" Association="Self.FK_inf_fecha_transformacion_inf_usuarios">
+            <End Role="inf_usuarios" EntitySet="inf_usuarios" />
+            <End Role="inf_fecha_transformacion" EntitySet="inf_fecha_transformacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_material_fact_estatus_material" Association="Self.FK_inf_material_fact_estatus_material">
+            <End Role="fact_estatus_material" EntitySet="fact_estatus_material" />
+            <End Role="inf_material" EntitySet="inf_material" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_material_fact_estatus_qa" Association="Self.FK_inf_material_fact_estatus_qa">
+            <End Role="fact_estatus_qa" EntitySet="fact_estatus_qa" />
+            <End Role="inf_material" EntitySet="inf_material" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_material_inf_usuarios" Association="Self.FK_inf_material_inf_usuarios">
+            <End Role="inf_usuarios" EntitySet="inf_usuarios" />
+            <End Role="inf_material" EntitySet="inf_material" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_subcentros_inf_centro" Association="Self.FK_inf_subcentros_inf_centro">
+            <End Role="inf_centro" EntitySet="inf_centro" />
+            <End Role="inf_subcentros" EntitySet="inf_subcentros" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_usuarios_fact_estatus" Association="Self.FK_inf_usuarios_fact_estatus">
+            <End Role="fact_estatus" EntitySet="fact_estatus" />
+            <End Role="inf_usuarios" EntitySet="inf_usuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_usuarios_fact_generos" Association="Self.FK_inf_usuarios_fact_generos">
+            <End Role="fact_generos" EntitySet="fact_generos" />
+            <End Role="inf_usuarios" EntitySet="inf_usuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_usuarios_fact_tipo_usuarios" Association="Self.FK_inf_usuarios_fact_tipo_usuarios">
+            <End Role="fact_tipo_usuarios" EntitySet="fact_tipo_usuarios" />
+            <End Role="inf_usuarios" EntitySet="inf_usuarios" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="db_videos_testModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="fact_estado">
+          <Key>
+            <PropertyRef Name="id_estado" />
+          </Key>
+          <Property Name="id_estado" Type="Int32" Nullable="false" />
+          <Property Name="desc_estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="fact_municipio" Relationship="Self.FK_fact_municipio_fact_estado" FromRole="fact_estado" ToRole="fact_municipio" />
+        </EntityType>
+        <EntityType Name="fact_estatus">
+          <Key>
+            <PropertyRef Name="id_estatus" />
+          </Key>
+          <Property Name="id_estatus" Type="Int32" Nullable="false" />
+          <Property Name="desc_estatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="inf_usuarios" Relationship="Self.FK_inf_usuarios_fact_estatus" FromRole="fact_estatus" ToRole="inf_usuarios" />
+        </EntityType>
+        <EntityType Name="fact_estatus_material">
+          <Key>
+            <PropertyRef Name="id_estatus_material" />
+          </Key>
+          <Property Name="id_estatus_material" Type="Int32" Nullable="false" />
+          <Property Name="desc_estatus_material" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="inf_material" Relationship="Self.FK_inf_material_fact_estatus_material" FromRole="fact_estatus_material" ToRole="inf_material" />
+        </EntityType>
+        <EntityType Name="fact_estatus_qa">
+          <Key>
+            <PropertyRef Name="id_estatus_qa" />
+          </Key>
+          <Property Name="id_estatus_qa" Type="Int32" Nullable="false" />
+          <Property Name="desc_estatus_qa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="inf_material" Relationship="Self.FK_inf_material_fact_estatus_qa" FromRole="fact_estatus_qa" ToRole="inf_material" />
+        </EntityType>
+        <EntityType Name="fact_generos">
+          <Key>
+            <PropertyRef Name="id_genero" />
+          </Key>
+          <Property Name="id_genero" Type="Int32" Nullable="false" />
+          <Property Name="desc_genero" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="inf_usuarios" Relationship="Self.FK_inf_usuarios_fact_generos" FromRole="fact_generos" ToRole="inf_usuarios" />
+        </EntityType>
+        <EntityType Name="fact_municipio">
+          <Key>
+            <PropertyRef Name="id_municipio" />
+          </Key>
+          <Property Name="id_municipio" Type="Int32" Nullable="false" />
+          <Property Name="desc_municipio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_estado" Type="Int32" />
+          <NavigationProperty Name="fact_estado" Relationship="Self.FK_fact_municipio_fact_estado" FromRole="fact_municipio" ToRole="fact_estado" />
+          <NavigationProperty Name="inf_centro" Relationship="Self.FK_inf_centro_fact_municipio" FromRole="fact_municipio" ToRole="inf_centro" />
+          <NavigationProperty Name="inf_contacto" Relationship="Self.FK_inf_contacto_fact_municipio" FromRole="fact_municipio" ToRole="inf_contacto" />
+        </EntityType>
+        <EntityType Name="fact_tipo_usuarios">
+          <Key>
+            <PropertyRef Name="id_tipo_usuario" />
+          </Key>
+          <Property Name="id_tipo_usuario" Type="Int32" Nullable="false" />
+          <Property Name="desc_tipo_usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="inf_usuarios" Relationship="Self.FK_inf_usuarios_fact_tipo_usuarios" FromRole="fact_tipo_usuarios" ToRole="inf_usuarios" />
+        </EntityType>
+        <EntityType Name="inf_centro">
+          <Key>
+            <PropertyRef Name="id_centro" />
+          </Key>
+          <Property Name="id_centro" Type="Guid" Nullable="false" />
+          <Property Name="id_estatus" Type="Int32" />
+          <Property Name="fecha_registro" Type="DateTime" Precision="0" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_municipio" Type="Int32" />
+          <Property Name="colonia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="calle_num" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cp" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="telefono_alt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email_alt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="fact_municipio" Relationship="Self.FK_inf_centro_fact_municipio" FromRole="inf_centro" ToRole="fact_municipio" />
+          <NavigationProperty Name="inf_fecha_transformacion" Relationship="Self.FK_inf_fecha_transformacion_inf_centro" FromRole="inf_centro" ToRole="inf_fecha_transformacion" />
+          <NavigationProperty Name="inf_subcentros" Relationship="Self.FK_inf_subcentros_inf_centro" FromRole="inf_centro" ToRole="inf_subcentros" />
+        </EntityType>
+        <EntityType Name="inf_contacto">
+          <Key>
+            <PropertyRef Name="id_contacto" />
+          </Key>
+          <Property Name="id_contacto" Type="Int32" Nullable="false" />
+          <Property Name="id_municipio" Type="Int32" />
+          <Property Name="colonia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="calle_num" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cp" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="telefono_alt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email_alt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_usuario" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="fact_municipio" Relationship="Self.FK_inf_contacto_fact_municipio" FromRole="inf_contacto" ToRole="fact_municipio" />
+          <NavigationProperty Name="inf_usuarios" Relationship="Self.FK_inf_contacto_inf_usuarios" FromRole="inf_contacto" ToRole="inf_usuarios" />
+        </EntityType>
+        <EntityType Name="inf_fecha_transformacion">
+          <Key>
+            <PropertyRef Name="id_fecha_transformacion" />
+          </Key>
+          <Property Name="id_fecha_transformacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="horario" Type="DateTime" Precision="3" />
+          <Property Name="id_usuario" Type="Guid" Nullable="false" />
+          <Property Name="id_centro" Type="Guid" Nullable="false" />
+          <Property Name="fecha_registro" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="inf_centro" Relationship="Self.FK_inf_fecha_transformacion_inf_centro" FromRole="inf_fecha_transformacion" ToRole="inf_centro" />
+          <NavigationProperty Name="inf_usuarios" Relationship="Self.FK_inf_fecha_transformacion_inf_usuarios" FromRole="inf_fecha_transformacion" ToRole="inf_usuarios" />
+        </EntityType>
+        <EntityType Name="inf_material">
+          <Key>
+            <PropertyRef Name="id_material" />
+          </Key>
+          <Property Name="id_material" Type="Int32" Nullable="false" />
+          <Property Name="expediente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sesion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="archivo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bits" Type="Int32" />
+          <Property Name="fecha_registro" Type="DateTime" Precision="0" />
+          <Property Name="id_estatus_material" Type="Int32" />
+          <Property Name="id_estatus_qa" Type="Int32" />
+          <Property Name="id_usuario" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="fact_estatus_material" Relationship="Self.FK_inf_material_fact_estatus_material" FromRole="inf_material" ToRole="fact_estatus_material" />
+          <NavigationProperty Name="fact_estatus_qa" Relationship="Self.FK_inf_material_fact_estatus_qa" FromRole="inf_material" ToRole="fact_estatus_qa" />
+          <NavigationProperty Name="inf_usuarios" Relationship="Self.FK_inf_material_inf_usuarios" FromRole="inf_material" ToRole="inf_usuarios" />
+        </EntityType>
+        <EntityType Name="inf_subcentros">
+          <Key>
+            <PropertyRef Name="id_subcentro" />
+          </Key>
+          <Property Name="id_subcentro" Type="Guid" Nullable="false" />
+          <Property Name="id_estatus" Type="Int32" />
+          <Property Name="fecha_registro" Type="DateTime" Precision="0" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_municipio" Type="Int32" />
+          <Property Name="colonia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="calle_num" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cp" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="telefono_alt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email_alt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_centro" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="inf_centro" Relationship="Self.FK_inf_subcentros_inf_centro" FromRole="inf_subcentros" ToRole="inf_centro" />
+        </EntityType>
+        <EntityType Name="inf_usuarios">
+          <Key>
+            <PropertyRef Name="id_usuario" />
+          </Key>
+          <Property Name="id_usuario" Type="Guid" Nullable="false" />
+          <Property Name="codigo_usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nombres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="a_paterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="a_materno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="clave" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_genero" Type="Int32" />
+          <Property Name="id_estatus" Type="Int32" />
+          <Property Name="id_tipo_usuario" Type="Int32" />
+          <Property Name="fecha_nacimiento" Type="DateTime" Precision="0" />
+          <Property Name="fecha_registro" Type="DateTime" Precision="0" />
+          <Property Name="id_centro" Type="Guid" />
+          <NavigationProperty Name="fact_estatus" Relationship="Self.FK_inf_usuarios_fact_estatus" FromRole="inf_usuarios" ToRole="fact_estatus" />
+          <NavigationProperty Name="fact_generos" Relationship="Self.FK_inf_usuarios_fact_generos" FromRole="inf_usuarios" ToRole="fact_generos" />
+          <NavigationProperty Name="fact_tipo_usuarios" Relationship="Self.FK_inf_usuarios_fact_tipo_usuarios" FromRole="inf_usuarios" ToRole="fact_tipo_usuarios" />
+          <NavigationProperty Name="inf_contacto" Relationship="Self.FK_inf_contacto_inf_usuarios" FromRole="inf_usuarios" ToRole="inf_contacto" />
+          <NavigationProperty Name="inf_fecha_transformacion" Relationship="Self.FK_inf_fecha_transformacion_inf_usuarios" FromRole="inf_usuarios" ToRole="inf_fecha_transformacion" />
+          <NavigationProperty Name="inf_material" Relationship="Self.FK_inf_material_inf_usuarios" FromRole="inf_usuarios" ToRole="inf_material" />
+        </EntityType>
+        <Association Name="FK_fact_municipio_fact_estado">
+          <End Role="fact_estado" Type="Self.fact_estado" Multiplicity="0..1" />
+          <End Role="fact_municipio" Type="Self.fact_municipio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_estado">
+              <PropertyRef Name="id_estado" />
+            </Principal>
+            <Dependent Role="fact_municipio">
+              <PropertyRef Name="id_estado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_usuarios_fact_estatus">
+          <End Role="fact_estatus" Type="Self.fact_estatus" Multiplicity="0..1" />
+          <End Role="inf_usuarios" Type="Self.inf_usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_estatus">
+              <PropertyRef Name="id_estatus" />
+            </Principal>
+            <Dependent Role="inf_usuarios">
+              <PropertyRef Name="id_estatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_material_fact_estatus_material">
+          <End Role="fact_estatus_material" Type="Self.fact_estatus_material" Multiplicity="0..1" />
+          <End Role="inf_material" Type="Self.inf_material" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_estatus_material">
+              <PropertyRef Name="id_estatus_material" />
+            </Principal>
+            <Dependent Role="inf_material">
+              <PropertyRef Name="id_estatus_material" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_material_fact_estatus_qa">
+          <End Role="fact_estatus_qa" Type="Self.fact_estatus_qa" Multiplicity="0..1" />
+          <End Role="inf_material" Type="Self.inf_material" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_estatus_qa">
+              <PropertyRef Name="id_estatus_qa" />
+            </Principal>
+            <Dependent Role="inf_material">
+              <PropertyRef Name="id_estatus_qa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_usuarios_fact_generos">
+          <End Role="fact_generos" Type="Self.fact_generos" Multiplicity="0..1" />
+          <End Role="inf_usuarios" Type="Self.inf_usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_generos">
+              <PropertyRef Name="id_genero" />
+            </Principal>
+            <Dependent Role="inf_usuarios">
+              <PropertyRef Name="id_genero" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_centro_fact_municipio">
+          <End Role="fact_municipio" Type="Self.fact_municipio" Multiplicity="0..1" />
+          <End Role="inf_centro" Type="Self.inf_centro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_municipio">
+              <PropertyRef Name="id_municipio" />
+            </Principal>
+            <Dependent Role="inf_centro">
+              <PropertyRef Name="id_municipio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_contacto_fact_municipio">
+          <End Role="fact_municipio" Type="Self.fact_municipio" Multiplicity="0..1" />
+          <End Role="inf_contacto" Type="Self.inf_contacto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_municipio">
+              <PropertyRef Name="id_municipio" />
+            </Principal>
+            <Dependent Role="inf_contacto">
+              <PropertyRef Name="id_municipio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_usuarios_fact_tipo_usuarios">
+          <End Role="fact_tipo_usuarios" Type="Self.fact_tipo_usuarios" Multiplicity="0..1" />
+          <End Role="inf_usuarios" Type="Self.inf_usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_tipo_usuarios">
+              <PropertyRef Name="id_tipo_usuario" />
+            </Principal>
+            <Dependent Role="inf_usuarios">
+              <PropertyRef Name="id_tipo_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_fecha_transformacion_inf_centro">
+          <End Role="inf_centro" Type="Self.inf_centro" Multiplicity="1" />
+          <End Role="inf_fecha_transformacion" Type="Self.inf_fecha_transformacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_centro">
+              <PropertyRef Name="id_centro" />
+            </Principal>
+            <Dependent Role="inf_fecha_transformacion">
+              <PropertyRef Name="id_centro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_subcentros_inf_centro">
+          <End Role="inf_centro" Type="Self.inf_centro" Multiplicity="1" />
+          <End Role="inf_subcentros" Type="Self.inf_subcentros" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_centro">
+              <PropertyRef Name="id_centro" />
+            </Principal>
+            <Dependent Role="inf_subcentros">
+              <PropertyRef Name="id_centro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_contacto_inf_usuarios">
+          <End Role="inf_usuarios" Type="Self.inf_usuarios" Multiplicity="1" />
+          <End Role="inf_contacto" Type="Self.inf_contacto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_usuarios">
+              <PropertyRef Name="id_usuario" />
+            </Principal>
+            <Dependent Role="inf_contacto">
+              <PropertyRef Name="id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_fecha_transformacion_inf_usuarios">
+          <End Role="inf_usuarios" Type="Self.inf_usuarios" Multiplicity="1" />
+          <End Role="inf_fecha_transformacion" Type="Self.inf_fecha_transformacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_usuarios">
+              <PropertyRef Name="id_usuario" />
+            </Principal>
+            <Dependent Role="inf_fecha_transformacion">
+              <PropertyRef Name="id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_material_inf_usuarios">
+          <End Role="inf_usuarios" Type="Self.inf_usuarios" Multiplicity="1" />
+          <End Role="inf_material" Type="Self.inf_material" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_usuarios">
+              <PropertyRef Name="id_usuario" />
+            </Principal>
+            <Dependent Role="inf_material">
+              <PropertyRef Name="id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="db_videos_testEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="fact_estado" EntityType="Self.fact_estado" />
+          <EntitySet Name="fact_estatus" EntityType="Self.fact_estatus" />
+          <EntitySet Name="fact_estatus_material" EntityType="Self.fact_estatus_material" />
+          <EntitySet Name="fact_estatus_qa" EntityType="Self.fact_estatus_qa" />
+          <EntitySet Name="fact_generos" EntityType="Self.fact_generos" />
+          <EntitySet Name="fact_municipio" EntityType="Self.fact_municipio" />
+          <EntitySet Name="fact_tipo_usuarios" EntityType="Self.fact_tipo_usuarios" />
+          <EntitySet Name="inf_centro" EntityType="Self.inf_centro" />
+          <EntitySet Name="inf_contacto" EntityType="Self.inf_contacto" />
+          <EntitySet Name="inf_fecha_transformacion" EntityType="Self.inf_fecha_transformacion" />
+          <EntitySet Name="inf_material" EntityType="Self.inf_material" />
+          <EntitySet Name="inf_subcentros" EntityType="Self.inf_subcentros" />
+          <EntitySet Name="inf_usuarios" EntityType="Self.inf_usuarios" />
+          <AssociationSet Name="FK_fact_municipio_fact_estado" Association="Self.FK_fact_municipio_fact_estado">
+            <End Role="fact_estado" EntitySet="fact_estado" />
+            <End Role="fact_municipio" EntitySet="fact_municipio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_usuarios_fact_estatus" Association="Self.FK_inf_usuarios_fact_estatus">
+            <End Role="fact_estatus" EntitySet="fact_estatus" />
+            <End Role="inf_usuarios" EntitySet="inf_usuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_material_fact_estatus_material" Association="Self.FK_inf_material_fact_estatus_material">
+            <End Role="fact_estatus_material" EntitySet="fact_estatus_material" />
+            <End Role="inf_material" EntitySet="inf_material" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_material_fact_estatus_qa" Association="Self.FK_inf_material_fact_estatus_qa">
+            <End Role="fact_estatus_qa" EntitySet="fact_estatus_qa" />
+            <End Role="inf_material" EntitySet="inf_material" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_usuarios_fact_generos" Association="Self.FK_inf_usuarios_fact_generos">
+            <End Role="fact_generos" EntitySet="fact_generos" />
+            <End Role="inf_usuarios" EntitySet="inf_usuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_centro_fact_municipio" Association="Self.FK_inf_centro_fact_municipio">
+            <End Role="fact_municipio" EntitySet="fact_municipio" />
+            <End Role="inf_centro" EntitySet="inf_centro" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_contacto_fact_municipio" Association="Self.FK_inf_contacto_fact_municipio">
+            <End Role="fact_municipio" EntitySet="fact_municipio" />
+            <End Role="inf_contacto" EntitySet="inf_contacto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_usuarios_fact_tipo_usuarios" Association="Self.FK_inf_usuarios_fact_tipo_usuarios">
+            <End Role="fact_tipo_usuarios" EntitySet="fact_tipo_usuarios" />
+            <End Role="inf_usuarios" EntitySet="inf_usuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_fecha_transformacion_inf_centro" Association="Self.FK_inf_fecha_transformacion_inf_centro">
+            <End Role="inf_centro" EntitySet="inf_centro" />
+            <End Role="inf_fecha_transformacion" EntitySet="inf_fecha_transformacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_subcentros_inf_centro" Association="Self.FK_inf_subcentros_inf_centro">
+            <End Role="inf_centro" EntitySet="inf_centro" />
+            <End Role="inf_subcentros" EntitySet="inf_subcentros" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_contacto_inf_usuarios" Association="Self.FK_inf_contacto_inf_usuarios">
+            <End Role="inf_usuarios" EntitySet="inf_usuarios" />
+            <End Role="inf_contacto" EntitySet="inf_contacto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_fecha_transformacion_inf_usuarios" Association="Self.FK_inf_fecha_transformacion_inf_usuarios">
+            <End Role="inf_usuarios" EntitySet="inf_usuarios" />
+            <End Role="inf_fecha_transformacion" EntitySet="inf_fecha_transformacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_material_inf_usuarios" Association="Self.FK_inf_material_inf_usuarios">
+            <End Role="inf_usuarios" EntitySet="inf_usuarios" />
+            <End Role="inf_material" EntitySet="inf_material" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="db_videos_testModelStoreContainer" CdmEntityContainer="db_videos_testEntities">
+          <EntitySetMapping Name="fact_estado">
+            <EntityTypeMapping TypeName="db_videos_testModel.fact_estado">
+              <MappingFragment StoreEntitySet="fact_estado">
+                <ScalarProperty Name="id_estado" ColumnName="id_estado" />
+                <ScalarProperty Name="desc_estado" ColumnName="desc_estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fact_estatus">
+            <EntityTypeMapping TypeName="db_videos_testModel.fact_estatus">
+              <MappingFragment StoreEntitySet="fact_estatus">
+                <ScalarProperty Name="id_estatus" ColumnName="id_estatus" />
+                <ScalarProperty Name="desc_estatus" ColumnName="desc_estatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fact_estatus_material">
+            <EntityTypeMapping TypeName="db_videos_testModel.fact_estatus_material">
+              <MappingFragment StoreEntitySet="fact_estatus_material">
+                <ScalarProperty Name="id_estatus_material" ColumnName="id_estatus_material" />
+                <ScalarProperty Name="desc_estatus_material" ColumnName="desc_estatus_material" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fact_estatus_qa">
+            <EntityTypeMapping TypeName="db_videos_testModel.fact_estatus_qa">
+              <MappingFragment StoreEntitySet="fact_estatus_qa">
+                <ScalarProperty Name="id_estatus_qa" ColumnName="id_estatus_qa" />
+                <ScalarProperty Name="desc_estatus_qa" ColumnName="desc_estatus_qa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fact_generos">
+            <EntityTypeMapping TypeName="db_videos_testModel.fact_generos">
+              <MappingFragment StoreEntitySet="fact_generos">
+                <ScalarProperty Name="id_genero" ColumnName="id_genero" />
+                <ScalarProperty Name="desc_genero" ColumnName="desc_genero" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fact_municipio">
+            <EntityTypeMapping TypeName="db_videos_testModel.fact_municipio">
+              <MappingFragment StoreEntitySet="fact_municipio">
+                <ScalarProperty Name="id_municipio" ColumnName="id_municipio" />
+                <ScalarProperty Name="desc_municipio" ColumnName="desc_municipio" />
+                <ScalarProperty Name="id_estado" ColumnName="id_estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fact_tipo_usuarios">
+            <EntityTypeMapping TypeName="db_videos_testModel.fact_tipo_usuarios">
+              <MappingFragment StoreEntitySet="fact_tipo_usuarios">
+                <ScalarProperty Name="id_tipo_usuario" ColumnName="id_tipo_usuario" />
+                <ScalarProperty Name="desc_tipo_usuario" ColumnName="desc_tipo_usuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inf_centro">
+            <EntityTypeMapping TypeName="db_videos_testModel.inf_centro">
+              <MappingFragment StoreEntitySet="inf_centro">
+                <ScalarProperty Name="id_centro" ColumnName="id_centro" />
+                <ScalarProperty Name="id_estatus" ColumnName="id_estatus" />
+                <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="id_municipio" ColumnName="id_municipio" />
+                <ScalarProperty Name="colonia" ColumnName="colonia" />
+                <ScalarProperty Name="calle_num" ColumnName="calle_num" />
+                <ScalarProperty Name="cp" ColumnName="cp" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="telefono_alt" ColumnName="telefono_alt" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="email_alt" ColumnName="email_alt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inf_contacto">
+            <EntityTypeMapping TypeName="db_videos_testModel.inf_contacto">
+              <MappingFragment StoreEntitySet="inf_contacto">
+                <ScalarProperty Name="id_contacto" ColumnName="id_contacto" />
+                <ScalarProperty Name="id_municipio" ColumnName="id_municipio" />
+                <ScalarProperty Name="colonia" ColumnName="colonia" />
+                <ScalarProperty Name="calle_num" ColumnName="calle_num" />
+                <ScalarProperty Name="cp" ColumnName="cp" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="telefono_alt" ColumnName="telefono_alt" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="email_alt" ColumnName="email_alt" />
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inf_fecha_transformacion">
+            <EntityTypeMapping TypeName="db_videos_testModel.inf_fecha_transformacion">
+              <MappingFragment StoreEntitySet="inf_fecha_transformacion">
+                <ScalarProperty Name="id_fecha_transformacion" ColumnName="id_fecha_transformacion" />
+                <ScalarProperty Name="horario" ColumnName="horario" />
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+                <ScalarProperty Name="id_centro" ColumnName="id_centro" />
+                <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inf_material">
+            <EntityTypeMapping TypeName="db_videos_testModel.inf_material">
+              <MappingFragment StoreEntitySet="inf_material">
+                <ScalarProperty Name="id_material" ColumnName="id_material" />
+                <ScalarProperty Name="expediente" ColumnName="expediente" />
+                <ScalarProperty Name="sesion" ColumnName="sesion" />
+                <ScalarProperty Name="archivo" ColumnName="archivo" />
+                <ScalarProperty Name="bits" ColumnName="bits" />
+                <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
+                <ScalarProperty Name="id_estatus_material" ColumnName="id_estatus_material" />
+                <ScalarProperty Name="id_estatus_qa" ColumnName="id_estatus_qa" />
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inf_subcentros">
+            <EntityTypeMapping TypeName="db_videos_testModel.inf_subcentros">
+              <MappingFragment StoreEntitySet="inf_subcentros">
+                <ScalarProperty Name="id_subcentro" ColumnName="id_subcentro" />
+                <ScalarProperty Name="id_estatus" ColumnName="id_estatus" />
+                <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="id_municipio" ColumnName="id_municipio" />
+                <ScalarProperty Name="colonia" ColumnName="colonia" />
+                <ScalarProperty Name="calle_num" ColumnName="calle_num" />
+                <ScalarProperty Name="cp" ColumnName="cp" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="telefono_alt" ColumnName="telefono_alt" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="email_alt" ColumnName="email_alt" />
+                <ScalarProperty Name="id_centro" ColumnName="id_centro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inf_usuarios">
+            <EntityTypeMapping TypeName="db_videos_testModel.inf_usuarios">
+              <MappingFragment StoreEntitySet="inf_usuarios">
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+                <ScalarProperty Name="codigo_usuario" ColumnName="codigo_usuario" />
+                <ScalarProperty Name="nombres" ColumnName="nombres" />
+                <ScalarProperty Name="a_paterno" ColumnName="a_paterno" />
+                <ScalarProperty Name="a_materno" ColumnName="a_materno" />
+                <ScalarProperty Name="clave" ColumnName="clave" />
+                <ScalarProperty Name="id_genero" ColumnName="id_genero" />
+                <ScalarProperty Name="id_estatus" ColumnName="id_estatus" />
+                <ScalarProperty Name="id_tipo_usuario" ColumnName="id_tipo_usuario" />
+                <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
+                <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
+                <ScalarProperty Name="id_centro" ColumnName="id_centro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
