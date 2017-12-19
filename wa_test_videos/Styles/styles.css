@@ -8,8 +8,8 @@
 
 
 body {
-      font-family: 'Muli', sans-serif;
-    /*font-family: 'Saira', sans-serif;*/
+      /*font-family: 'Muli', sans-serif;*/
+    font-family: 'Saira', sans-serif;
     color: #225d4f;
     /*background: url(../images/iconos/degradado.svg) no-repeat;*/
 }
@@ -40,4 +40,20 @@ footer {
   border-right-width: thin;
   border-bottom-width: thin;
   border-left-width: thin;
+}
+
+h1 {
+    font-family: 'Saira', sans-serif;
+}
+h2 {
+    font-family: 'Saira', sans-serif;
+}
+h3 {
+    font-family: 'Saira', sans-serif;
+}
+h4 {
+    font-family: 'Saira', sans-serif;
+}
+h5 {
+    font-family: 'Saira', sans-serif;
 }

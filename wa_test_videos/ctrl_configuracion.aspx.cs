@@ -1,14 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace wa_test_videos
+
+namespace wa_transcript
 {
     public partial class ctrl_configuracion : System.Web.UI.Page
     {
+        static Guid id_fuser;
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -31,11 +36,9 @@ namespace wa_test_videos
         }
         private void inf_user()
         {
-            Guid id_user = mdl_user.str_fiduser;
-            lbl_idfuser.Text = id_user.ToString();
-            Guid id_fuser = Guid.Parse(lbl_idfuser.Text);
+            id_fuser = (Guid)(Session["ss_id_user"]);
 
-            using (db_videos_testEntities data_user = new db_videos_testEntities())
+            using (db_transcriptEntities data_user = new db_transcriptEntities())
             {
                 var inf_user = (from i_u in data_user.inf_usuarios
                                 join i_tu in data_user.fact_tipo_usuarios on i_u.id_tipo_usuario equals i_tu.id_tipo_usuario
@@ -61,150 +64,26 @@ namespace wa_test_videos
 
             }
         }
-        protected void cmd_save_Click(object sender, EventArgs e)
+
+
+        protected void img_transformation_Click(object sender, ImageClickEventArgs e)
         {
-            if (rb_add.Checked || rb_editar.Checked)
-            {
-                lbl_mnsj.Visible = false;
-                lbl_mnsj.Text = "";
-
-                Guid id_fcenter = Guid.Parse(lbl_idcenter.Text);
-                string str_date = txt_date.Text;
-                string str_hora = txt_hora.Text;
-                string str_format = ddl_fhora.SelectedValue;
-                string dateString = str_date + " " + str_hora + " " + str_format;
-                DateTime str_horario = DateTime.Parse(dateString);
-
-                if (rb_add.Checked)
-                {
-                    using (var insert_fiscal = new db_videos_testEntities())
-                    {
-                        var items_fiscal = new inf_fecha_transformacion
-                        {
-                            horario = str_horario,
-                            id_usuario = mdl_user.str_fiduser,
-                            id_centro = id_fcenter,
-                            fecha_registro = DateTime.Now
-
-                        };
-                        insert_fiscal.inf_fecha_transformacion.Add(items_fiscal);
-                        insert_fiscal.SaveChanges();
-                    }
-                    clean_txt();
-                    lbl_mnsj.Visible = true;
-                    lbl_mnsj.Text = "Datos agregada con exito";
-                }
-                else if (rb_editar.Checked)
-                {
-                    foreach (GridViewRow row in gv_usuarios.Rows)
-                    {
-                        if (row.RowType == DataControlRowType.DataRow)
-                        {
-                            CheckBox chkRow = (row.Cells[3].FindControl("chk_select") as CheckBox);
-                            if (chkRow.Checked)
-                            {
-                                int str_code = Convert.ToInt32(row.Cells[1].Text);
-
-                                using (var data_address = new db_videos_testEntities())
-                                {
-                                    var items_address = (from c in data_address.inf_fecha_transformacion
-                                                         where c.id_fecha_transformacion == str_code
-                                                         select c).FirstOrDefault();
-
-                                    items_address.horario = str_horario;
-
-                                    data_address.SaveChanges();
-                                }
-
-                            }
-                        }
-                    }
-
-                    lbl_mnsj.Visible = true;
-                    lbl_mnsj.Text = "Datos agregada con exito";
-                }
-
-
-            }
-            else
-            {
-                lbl_mnsj.Visible = true;
-                lbl_mnsj.Text = "Favor de seleccionar una acción";
-            }
-        }
-        protected void chk_OnCheckedChanged(object sender, EventArgs e)
-        {
-            foreach (GridViewRow row in gv_usuarios.Rows)
-            {
-                if (row.RowType == DataControlRowType.DataRow)
-                {
-                    CheckBox chkRow = (row.Cells[3].FindControl("chk_select") as CheckBox);
-                    if (chkRow.Checked)
-                    {
-                        int str_code = Convert.ToInt32(row.Cells[1].Text);
-
-                        using (db_videos_testEntities data_user = new db_videos_testEntities())
-                        {
-                            var inf_user = (from u in data_user.inf_fecha_transformacion
-                                            where u.id_fecha_transformacion == str_code
-                                            select new
-                                            {
-                                                u.id_fecha_transformacion,
-                                                u.horario,
-                                                u.fecha_registro
-
-                                            }).FirstOrDefault();
-
-                            DateTime? str_date = new DateTime();
-                            str_date = inf_user.horario;
-                            txt_date.Text = str_date.Value.ToShortDateString();
-                            txt_hora.Text = str_date.Value.ToLongTimeString();
-                            string str_tt = inf_user.horario.Value.ToString("tt");
-                            ddl_fhora.SelectedValue = str_tt.ToLower();
-                        }
-                    }
-                }
-            }
-
-        }
-        protected void rb_add_CheckedChanged(object sender, EventArgs e)
-        {
-            rb_editar.Checked = false;
-            clean_txt();
-            gv_usuarios.Visible = false;
+            Response.Redirect("ctrl_agenda_conversion.aspx");
         }
 
-        private void clean_txt()
+        protected void img_dayvideos_Click(object sender, ImageClickEventArgs e)
         {
-            txt_date.Text = "";
-            txt_hora.Text = "";
-            ddl_fhora.SelectedValue = "Seleccionar";
-            lbl_mnsj.Visible = false;
+            Response.Redirect("ctrl_dias_respaldo.aspx");
         }
 
-        protected void rb_editar_CheckedChanged(object sender, EventArgs e)
+        protected void img_routevideos_Click(object sender, ImageClickEventArgs e)
         {
-            rb_add.Checked = false;
-            clean_txt();
-
-            using (db_videos_testEntities data_user = new db_videos_testEntities())
-            {
-                var inf_user = (from u in data_user.inf_fecha_transformacion
-                                select new
-                                {
-
-                                    u.id_fecha_transformacion,
-                                    u.horario,
-                                    u.fecha_registro
-
-                                }).ToList();
-
-                gv_usuarios.DataSource = inf_user;
-                gv_usuarios.DataBind();
-                gv_usuarios.Visible = true;
-            }
+            Response.Redirect("ctrl_ruta_videos.aspx");
         }
 
-
+        protected void img_credentials_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("ctrl_conexion.aspx");
+        }
     }
 }

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace wa_test_videos
+namespace wa_transcript
 {
     using System;
     using System.Collections.Generic;
@@ -15,14 +15,17 @@ namespace wa_test_videos
     public partial class inf_material
     {
         public int id_material { get; set; }
-        public string expediente { get; set; }
         public string sesion { get; set; }
+        public string titulo { get; set; }
+        public string localizacion { get; set; }
+        public string tipo { get; set; }
         public string archivo { get; set; }
-        public Nullable<int> bits { get; set; }
+        public string duracion { get; set; }
         public Nullable<System.DateTime> fecha_registro { get; set; }
         public Nullable<int> id_estatus_material { get; set; }
         public Nullable<int> id_estatus_qa { get; set; }
-        public System.Guid id_usuario { get; set; }
+        public Nullable<System.Guid> id_usuario { get; set; }
+        public Nullable<System.Guid> id_control { get; set; }
     
         public virtual fact_estatus_material fact_estatus_material { get; set; }
         public virtual fact_estatus_qa fact_estatus_qa { get; set; }

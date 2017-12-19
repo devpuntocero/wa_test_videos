@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace wa_test_videos {
+namespace wa_transcript {
     
     
     public partial class ctrl_menu_resumen {

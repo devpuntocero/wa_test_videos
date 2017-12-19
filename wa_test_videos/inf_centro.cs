@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace wa_test_videos
+namespace wa_transcript
 {
     using System;
     using System.Collections.Generic;
@@ -17,7 +17,12 @@ namespace wa_test_videos
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public inf_centro()
         {
+            this.inf_caducidad_videos = new HashSet<inf_caducidad_videos>();
+            this.inf_credenciales = new HashSet<inf_credenciales>();
             this.inf_fecha_transformacion = new HashSet<inf_fecha_transformacion>();
+            this.inf_fecha_transformacion1 = new HashSet<inf_fecha_transformacion>();
+            this.inf_log_videos = new HashSet<inf_log_videos>();
+            this.inf_ruta_videos = new HashSet<inf_ruta_videos>();
             this.inf_subcentros = new HashSet<inf_subcentros>();
         }
     
@@ -33,10 +38,22 @@ namespace wa_test_videos
         public string telefono_alt { get; set; }
         public string email { get; set; }
         public string email_alt { get; set; }
+        public Nullable<System.Guid> id_empresa { get; set; }
     
         public virtual fact_municipio fact_municipio { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<inf_caducidad_videos> inf_caducidad_videos { get; set; }
+        public virtual inf_empresa inf_empresa { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<inf_credenciales> inf_credenciales { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<inf_fecha_transformacion> inf_fecha_transformacion { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<inf_fecha_transformacion> inf_fecha_transformacion1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<inf_log_videos> inf_log_videos { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<inf_ruta_videos> inf_ruta_videos { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<inf_subcentros> inf_subcentros { get; set; }
     }

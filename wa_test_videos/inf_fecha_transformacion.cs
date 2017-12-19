@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace wa_test_videos
+namespace wa_transcript
 {
     using System;
     using System.Collections.Generic;
@@ -21,6 +21,7 @@ namespace wa_test_videos
         public Nullable<System.DateTime> fecha_registro { get; set; }
     
         public virtual inf_centro inf_centro { get; set; }
+        public virtual inf_centro inf_centro1 { get; set; }
         public virtual inf_usuarios inf_usuarios { get; set; }
     }
 }

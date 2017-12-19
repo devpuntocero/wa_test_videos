@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace wa_test_videos {
+namespace wa_transcript {
     
     
     public partial class ctrl_configuracion {
@@ -20,15 +20,6 @@ namespace wa_test_videos {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.ScriptManager ScriptManager1;
-        
-        /// <summary>
-        /// UpdatePanel1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
         /// lbl_welcome control.
@@ -112,156 +103,75 @@ namespace wa_test_videos {
         protected global::System.Web.UI.WebControls.Label lbl_idcenter;
         
         /// <summary>
-        /// lbl_reg control.
+        /// div_credentials control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_reg;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_credentials;
         
         /// <summary>
-        /// rb_add control.
+        /// img_credentials control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rb_add;
+        protected global::System.Web.UI.WebControls.ImageButton img_credentials;
         
         /// <summary>
-        /// rb_editar control.
+        /// div_routevideos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rb_editar;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_routevideos;
         
         /// <summary>
-        /// gv_usuarios control.
+        /// img_routevideos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gv_usuarios;
+        protected global::System.Web.UI.WebControls.ImageButton img_routevideos;
         
         /// <summary>
-        /// lbl_fecha control.
+        /// div_transformation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_fecha;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_transformation;
         
         /// <summary>
-        /// txt_date control.
+        /// img_transformation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_date;
+        protected global::System.Web.UI.WebControls.ImageButton img_transformation;
         
         /// <summary>
-        /// ce_date control.
+        /// div_dayvideos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.CalendarExtender ce_date;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_dayvideos;
         
         /// <summary>
-        /// rfv_date control.
+        /// img_dayvideos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_date;
-        
-        /// <summary>
-        /// lbl_hora control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_hora;
-        
-        /// <summary>
-        /// txt_hora control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_hora;
-        
-        /// <summary>
-        /// rfv_hora control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_hora;
-        
-        /// <summary>
-        /// MaskedEditExtender2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.MaskedEditExtender MaskedEditExtender2;
-        
-        /// <summary>
-        /// lbl_fhora control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_fhora;
-        
-        /// <summary>
-        /// ddl_fhora control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_fhora;
-        
-        /// <summary>
-        /// cmd_save control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button cmd_save;
-        
-        /// <summary>
-        /// rfv_fhora control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_fhora;
-        
-        /// <summary>
-        /// lbl_mnsj control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_mnsj;
+        protected global::System.Web.UI.WebControls.ImageButton img_dayvideos;
     }
 }

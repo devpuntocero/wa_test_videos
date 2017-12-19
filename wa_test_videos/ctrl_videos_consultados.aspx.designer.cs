@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace wa_test_videos {
+namespace wa_transcript {
     
     
     public partial class ctrl_videos_consultados {
@@ -193,15 +193,6 @@ namespace wa_test_videos {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_datefin;
         
         /// <summary>
-        /// rb_active control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rb_active;
-        
-        /// <summary>
         /// gv_files control.
         /// </summary>
         /// <remarks>
@@ -209,14 +200,5 @@ namespace wa_test_videos {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gv_files;
-        
-        /// <summary>
-        /// lbl_mnsj control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_mnsj;
     }
 }

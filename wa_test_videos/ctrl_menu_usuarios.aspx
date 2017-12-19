@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="ctrl_menu_usuarios.aspx.cs" Inherits="wa_test_videos.ctrl_menu_usuarios" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master_transcript.Master" AutoEventWireup="true" CodeBehind="ctrl_menu_usuarios.aspx.cs" Inherits="wa_transcript.ctrl_menu_usuarios" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -32,7 +32,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="text-center">Control de Usuarios</h1>
+                        <h1 class="text-center">Control de usuarios</h1>
                     </div>
                 </div>
                 <div class="row animated bounceInUp">

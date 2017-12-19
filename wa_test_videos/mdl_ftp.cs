@@ -5,7 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 
-namespace wa_test_videos
+namespace wa_transcript
 {
     public class mdl_ftp
     {

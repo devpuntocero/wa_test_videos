@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace wa_test_videos {
+namespace wa_transcript {
     
     
     public partial class ctrl_centro {
@@ -40,67 +40,76 @@ namespace wa_test_videos {
         protected global::System.Web.UI.WebControls.Label lbl_welcome;
         
         /// <summary>
-        /// lbl_name control.
+        /// lbl_fuser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_name;
+        protected global::System.Web.UI.WebControls.Label lbl_fuser;
         
         /// <summary>
-        /// lbl_profilelbl control.
+        /// lbl_idfuser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_profilelbl;
+        protected global::System.Web.UI.WebControls.Label lbl_idfuser;
         
         /// <summary>
-        /// lbl_profile_user control.
+        /// lbl_profile control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_profile_user;
+        protected global::System.Web.UI.WebControls.Label lbl_profile;
         
         /// <summary>
-        /// lbl_id_profile_user control.
+        /// lbl_profileuser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_id_profile_user;
+        protected global::System.Web.UI.WebControls.Label lbl_profileuser;
         
         /// <summary>
-        /// lbl_user_centerP control.
+        /// lbl_idprofileuser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_user_centerP;
+        protected global::System.Web.UI.WebControls.Label lbl_idprofileuser;
         
         /// <summary>
-        /// lbl_user_centerCP control.
+        /// lbl_center control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_user_centerCP;
+        protected global::System.Web.UI.WebControls.Label lbl_center;
         
         /// <summary>
-        /// lbl_id_centerCP control.
+        /// lbl_centername control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_id_centerCP;
+        protected global::System.Web.UI.WebControls.Label lbl_centername;
+        
+        /// <summary>
+        /// lbl_idcenter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_idcenter;
         
         /// <summary>
         /// lbl_reg control.
@@ -112,13 +121,13 @@ namespace wa_test_videos {
         protected global::System.Web.UI.WebControls.Label lbl_reg;
         
         /// <summary>
-        /// rb_edit control.
+        /// chkb_editar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rb_edit;
+        protected global::System.Web.UI.WebControls.CheckBox chkb_editar;
         
         /// <summary>
         /// div_fiscal control.
@@ -382,12 +391,30 @@ namespace wa_test_videos {
         protected global::System.Web.UI.WebControls.Button cmd_save;
         
         /// <summary>
-        /// lbl_mnsj control.
+        /// upModal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_mnsj;
+        protected global::System.Web.UI.UpdatePanel upModal;
+        
+        /// <summary>
+        /// lblModalTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblModalTitle;
+        
+        /// <summary>
+        /// lblModalBody control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblModalBody;
     }
 }

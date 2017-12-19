@@ -5,10 +5,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace wa_test_videos
+namespace wa_transcript
 {
     public partial class ctrl_menu_resumen : System.Web.UI.Page
     {
+        static Guid id_fuser;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -34,12 +35,9 @@ namespace wa_test_videos
 
         private void inf_user()
         {
-            Guid id_user = mdl_user.str_fiduser;
-            lbl_idfuser.Text = id_user.ToString();
-            Guid id_fuser = Guid.Parse(lbl_idfuser.Text);
-            //Session.Abandon();
+            id_fuser = (Guid)(Session["ss_id_user"]);
 
-            using (db_videos_testEntities data_user = new db_videos_testEntities())
+            using (db_transcriptEntities data_user = new db_transcriptEntities())
             {
                 var inf_user = (from i_u in data_user.inf_usuarios
                                 join i_tu in data_user.fact_tipo_usuarios on i_u.id_tipo_usuario equals i_tu.id_tipo_usuario

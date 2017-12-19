@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace wa_test_videos {
+namespace wa_transcript {
     
     
     public partial class ctrl_menu {
@@ -103,22 +103,40 @@ namespace wa_test_videos {
         protected global::System.Web.UI.WebControls.Label lbl_idcenter;
         
         /// <summary>
-        /// div_tracing control.
+        /// div_control_users control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_tracing;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_control_users;
         
         /// <summary>
-        /// img_tracing control.
+        /// img_control_users control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton img_tracing;
+        protected global::System.Web.UI.WebControls.ImageButton img_control_users;
+        
+        /// <summary>
+        /// div_control_centers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_control_centers;
+        
+        /// <summary>
+        /// img_control_centers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton img_control_centers;
         
         /// <summary>
         /// div_material control.
@@ -139,22 +157,22 @@ namespace wa_test_videos {
         protected global::System.Web.UI.WebControls.ImageButton img_material;
         
         /// <summary>
-        /// div_control_users control.
+        /// div_tracing control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_control_users;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_tracing;
         
         /// <summary>
-        /// img_control_users control.
+        /// img_tracing control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton img_control_users;
+        protected global::System.Web.UI.WebControls.ImageButton img_tracing;
         
         /// <summary>
         /// div_resumen control.
@@ -173,23 +191,5 @@ namespace wa_test_videos {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton img_summary;
-        
-        /// <summary>
-        /// div_control_centers control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_control_centers;
-        
-        /// <summary>
-        /// img_control_centers control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton img_control_centers;
     }
 }

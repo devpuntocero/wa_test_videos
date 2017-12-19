@@ -1,8 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="ctrl_videos_consultados.aspx.cs" Inherits="wa_test_videos.ctrl_videos_consultados" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master_transcript.Master" AutoEventWireup="true" CodeBehind="ctrl_videos_consultados.aspx.cs" Inherits="wa_transcript.ctrl_videos_consultados" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
         <ContentTemplate>
 
@@ -37,7 +38,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <h2 class="text-center">
-                                    <asp:Label ID="lbl_reg" runat="server" Text="Consulta de Videos"></asp:Label></h2>
+                                    <asp:Label ID="lbl_reg" runat="server" Text="Videos Consultados"></asp:Label></h2>
                             </div>
                         </div>
                         <div class=" col-md-2">
@@ -69,49 +70,20 @@
                                 </asp:RequiredFieldValidator>
                             </div>
                         </div>
-                        <div class=" col-md-7 text-right">
-                            <asp:RadioButton CssClass="radio-inline" ID="rb_active" runat="server" Text="Consultados" AutoPostBack="True" />
-                        </div>
                         <div class="col-md-12">
-                            <script>
-                                function CheckOne(obj) {
-                                    var grid = obj.parentNode.parentNode.parentNode;
-                                    var inputs = grid.getElementsByTagName("input");
-                                    for (var i = 0; i < inputs.length; i++) {
-                                        if (inputs[i].type == "checkbox") {
-                                            if (obj.checked && inputs[i] != obj && inputs[i].checked) {
-                                                inputs[i].checked = false;
-                                            }
-                                        }
-                                    }
-                                }
-                            </script>
                             <br />
-                            <asp:GridView CssClass="table" ID="gv_files" runat="server" AutoGenerateColumns="False" AllowPaging="True">
+                            <asp:GridView CssClass="table" ID="gv_files" runat="server" AutoGenerateColumns="False" AllowPaging="True" OnPageIndexChanging="gv_usuarios_PageIndexChanging"  PageSize="10" pager>
                                 <Columns>
-                                    <asp:TemplateField HeaderText="Seleccionar">
-                                        <ItemTemplate>
-                                            <asp:CheckBox ID="chk_select" runat="server" onclick="CheckOne(this)" AutoPostBack="true" />
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                    <asp:BoundField DataField="expediente" HeaderText="Expediente" SortExpression="expediente" Visible="true" />
-                                    <asp:BoundField DataField="archivo" HeaderText="Archivo" SortExpression="archivo" />
-                                    <asp:BoundField DataField="codigo_usuario" HeaderText="ID de Usuario" SortExpression="codigo_usuario" Visible="true" />
+                                    <asp:BoundField DataField="id_log_videos" HeaderText="ID" SortExpression="id_log_videos" Visible="true" />
+                                    <asp:BoundField DataField="sesion" HeaderText="Sesión" SortExpression="sesion" />
+                                    <asp:BoundField DataField="video" HeaderText="Video" SortExpression="video" Visible="true" />
                                     <asp:BoundField DataField="nombres" HeaderText="Nombre de Usuario" SortExpression="nombres" />
                                     <asp:BoundField DataField="a_paterno" HeaderText="Apellido Paterno" SortExpression="a_paterno" />
                                     <asp:BoundField DataField="a_materno" HeaderText="Apellido Materno" SortExpression="a_materno" />
-                                    <asp:BoundField DataField="bits" HeaderText="Tamaño MB" SortExpression="bits" DataFormatString="{0:0,0}" />
-                                    <asp:BoundField DataField="fecha_registro" HeaderText="Fecha Registro" SortExpression="fecha_registro" DataFormatString="{0:dd-MM-yyyy}" HtmlEncode="false" />
+                                    <asp:BoundField DataField="fecha_registro_alt" HeaderText="Fecha Registro" SortExpression="fecha_registro_alt" DataFormatString="{0:dd-MM-yyyy}" HtmlEncode="false" />
                                 </Columns>
+                                <PagerSettings Mode="NextPrevious" NextPageImageUrl="~/images/next_arrow.png" PreviousPageImageUrl="~/images/back_arrow.png" />
                             </asp:GridView>
-                        </div>
-                        <br />
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h3 class="text-center text-warning">
-                                    <asp:Label ID="lbl_mnsj" runat="server" Visible="True"></asp:Label>
-                                </h3>
-                            </div>
                         </div>
                     </div>
                 </div>

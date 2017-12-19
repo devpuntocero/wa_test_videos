@@ -12,10 +12,11 @@ using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace wa_test_videos
+namespace wa_transcript
 {
     public partial class ctrl_videos_carga : System.Web.UI.Page
     {
+        static Guid id_fuser;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -83,14 +84,14 @@ namespace wa_test_videos
         }
         private void inf_user()
         {
-            Guid id_user = mdl_user.str_fiduser;
+            id_fuser = (Guid)(Session["ss_id_user"]);
 
-            using (db_videos_testEntities data_user = new db_videos_testEntities())
+            using (db_transcriptEntities data_user = new db_transcriptEntities())
             {
                 var inf_user = (from i_u in data_user.inf_usuarios
                                 join i_tu in data_user.fact_tipo_usuarios on i_u.id_tipo_usuario equals i_tu.id_tipo_usuario
                                 join i_e in data_user.inf_centro on i_u.id_centro equals i_e.id_centro
-                                where i_u.id_usuario == id_user
+                                where i_u.id_usuario == id_fuser
                                 select new
                                 {
                                     i_u.nombres,
@@ -133,7 +134,7 @@ namespace wa_test_videos
         }
         protected void AjaxFileUpload1_UploadComplete(object sender, AjaxFileUploadEventArgs e)
         {
-            Guid id_user = mdl_user.str_fiduser;
+       
             string str_filename, str_field;
             string path = Server.MapPath("~/videos/") + e.FileName;
             str_filename = e.FileName;
@@ -142,23 +143,23 @@ namespace wa_test_videos
             Int32 str_filesizemb = Convert.ToInt32(str_filesize) / 1024;
             str_field = e.FileId;
 
-            using (var insert_material = new db_videos_testEntities())
-            {
+            //using (var insert_material = new db_transcriptEntities())
+            //{
 
-                var items_user = new inf_material
-                {
-                    expediente = "00001",
-                    sesion = "001",
-                    archivo = str_filename,
-                    bits = Convert.ToInt32(str_filesizemb),
-                    fecha_registro = DateTime.Now,
-                    id_estatus_material = 1,
-                    id_usuario = id_user,
+            //    var items_user = new inf_material
+            //    {
+            //        expediente = "00001",
+            //        sesion = "001",
+            //        archivo = str_filename,
+            //        bits = Convert.ToInt32(str_filesizemb),
+            //        fecha_registro = DateTime.Now,
+            //        id_estatus_material = 1,
+            //        id_usuario = id_user,
 
-                };
-                insert_material.inf_material.Add(items_user);
-                insert_material.SaveChanges();
-            }
+            //    };
+            //    insert_material.inf_material.Add(items_user);
+            //    insert_material.SaveChanges();
+            //}
 
             AjaxFileUpload1.SaveAs(path);
 

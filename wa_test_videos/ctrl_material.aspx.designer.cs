@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace wa_test_videos {
+namespace wa_transcript {
     
     
     public partial class ctrl_material {
@@ -103,22 +103,22 @@ namespace wa_test_videos {
         protected global::System.Web.UI.WebControls.Label lbl_idcenter;
         
         /// <summary>
-        /// div_videos_load control.
+        /// div_configuration control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_videos_load;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_configuration;
         
         /// <summary>
-        /// img_videos_load control.
+        /// img_configuration control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton img_videos_load;
+        protected global::System.Web.UI.WebControls.ImageButton img_configuration;
         
         /// <summary>
         /// div_transformation control.
@@ -137,23 +137,5 @@ namespace wa_test_videos {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton img_transformation;
-        
-        /// <summary>
-        /// div_configuration control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_configuration;
-        
-        /// <summary>
-        /// img_configuration control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton img_configuration;
     }
 }

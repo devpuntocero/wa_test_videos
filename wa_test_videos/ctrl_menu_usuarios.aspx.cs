@@ -5,10 +5,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace wa_test_videos
+namespace wa_transcript
 {
     public partial class ctrl_menu_usuarios : System.Web.UI.Page
     {
+        static Guid id_fuser;
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -37,13 +38,13 @@ namespace wa_test_videos
         }
         private void inf_user()
         {
-            Guid id_user = mdl_user.str_fiduser;
-            using (db_videos_testEntities data_user = new db_videos_testEntities())
+            id_fuser = (Guid)(Session["ss_id_user"]);
+            using (db_transcriptEntities data_user = new db_transcriptEntities())
             {
                 var inf_user = (from i_u in data_user.inf_usuarios
                                 join i_tu in data_user.fact_tipo_usuarios on i_u.id_tipo_usuario equals i_tu.id_tipo_usuario
                                 join i_e in data_user.inf_centro on i_u.id_centro equals i_e.id_centro
-                                where i_u.id_usuario == id_user
+                                where i_u.id_usuario == id_fuser
                                 select new
                                 {
                                     i_u.nombres,

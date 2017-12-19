@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace wa_test_videos
+namespace wa_transcript
 {
     using System;
     using System.Collections.Generic;
@@ -18,7 +18,6 @@ namespace wa_test_videos
         public fact_municipio()
         {
             this.inf_centro = new HashSet<inf_centro>();
-            this.inf_contacto = new HashSet<inf_contacto>();
         }
     
         public int id_municipio { get; set; }
@@ -28,7 +27,5 @@ namespace wa_test_videos
         public virtual fact_estado fact_estado { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<inf_centro> inf_centro { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<inf_contacto> inf_contacto { get; set; }
     }
 }

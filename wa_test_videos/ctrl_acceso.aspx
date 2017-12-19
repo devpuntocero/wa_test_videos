@@ -1,11 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="ctrl_acceso.aspx.cs" Inherits="wa_test_videos.ctrl_acceso" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master_transcript.Master" AutoEventWireup="true" CodeBehind="ctrl_acceso.aspx.cs" Inherits="wa_transcript.ctrl_acceso" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <div class="section">
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+    <div class="section">
         <div class="container">
-            <br />
-            <br />
             <div class="row">
                 <div class="col-md-12">
                     <br />
@@ -17,7 +17,6 @@
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
-
                         <h5>
                             <asp:Label CssClass="control-label" ID="lbl_code_user" runat="server" Text="*Usuario"></asp:Label></h5>
                         <asp:TextBox CssClass="form-control" ID="txt_code_user" runat="server" TabIndex="1" placeholder="Capturar Usuario"></asp:TextBox>
@@ -44,19 +43,39 @@
                         </asp:RequiredFieldValidator>
                     </div>
                     <div class="row">
-                        <div class="col-md-12 text-right">
+                        <div class="col-md-6 text-center">
+                            <a href="ctrl_registro.aspx">
+                                <h6>
+                                    <asp:Label CssClass="control-label" ID="lbl_registro" runat="server" Text="Registrar" Visible="false"></asp:Label></h6>
+                            </a>
+                        </div>
+                        <div class="col-md-6 text-right">
                             <asp:Button CssClass="btn btn-success" ID="cmd_login" runat="server" Text="Entrar" TabIndex="4" OnClick="cmd_login_Click" />
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <h5 class="text-center text-warning">
-                        <asp:Label ID="lbl_err" runat="server"></asp:Label>
-                    </h5>
-                </div>
-            </div>
         </div>
     </div>
+  <!-- Bootstrap Modal Dialog -->
+<div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <asp:UpdatePanel ID="upModal" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
+            <ContentTemplate>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title"><asp:Label ID="lblModalTitle" runat="server" Text=""></asp:Label></h4>
+                    </div>
+                    <div class="modal-body">
+                        <asp:Label ID="lblModalBody" runat="server" Text=""></asp:Label>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-success" data-dismiss="modal" aria-hidden="true">Ok</button>
+                    </div>
+                </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+    </div>
+</div>
 </asp:Content>

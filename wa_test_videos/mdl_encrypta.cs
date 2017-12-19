@@ -4,7 +4,7 @@ using System.Security.Cryptography;
 using System.IO;
 using System.Linq;
 
-namespace wa_test_videos
+namespace wa_transcript
 {
     public class mdl_encrypta
     {
