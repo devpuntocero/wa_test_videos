@@ -79,7 +79,7 @@
                                                             ForeColor="orange">
                                                         </asp:RequiredFieldValidator>
                                                         <asp:RegularExpressionValidator ID="IpValidator" ControlToValidate="txt_ip" runat="server" ValidationExpression="^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$"
-                                                            ErrorMessage="Enter valid IP Address" CssClass="comments" Display="None"></asp:RegularExpressionValidator>
+                                                            ErrorMessage="Formato de IP Invalido" CssClass="comments" Display="None"></asp:RegularExpressionValidator>
 
                                                         <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="PNReqE" TargetControlID="IpValidator"  HighlightCssClass="highlight" />
                                                     </div>

@@ -6,7 +6,6 @@
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
         <ContentTemplate>
-
             <div class="section">
                 <div class="container">
                     <div class="form-group">
@@ -72,7 +71,7 @@
                         </div>
                         <div class="col-md-12">
                             <br />
-                            <asp:GridView CssClass="table" ID="gv_files" runat="server" AutoGenerateColumns="False" AllowPaging="True" OnPageIndexChanging="gv_usuarios_PageIndexChanging"  PageSize="10" pager>
+                            <asp:GridView CssClass="table" ID="gv_files" runat="server" AutoGenerateColumns="False" AllowPaging="True" OnPageIndexChanging="gv_usuarios_PageIndexChanging" PageSize="10" pager>
                                 <Columns>
                                     <asp:BoundField DataField="id_log_videos" HeaderText="ID" SortExpression="id_log_videos" Visible="true" />
                                     <asp:BoundField DataField="sesion" HeaderText="Sesión" SortExpression="sesion" />
